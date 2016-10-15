@@ -59,7 +59,9 @@ You may either run this script:
 ./scripts/deploy-products.sh
 ```
 
-OR if you wish to deploy by hand
+OR
+<details>
+ <summary>if you want to deploy by hand</summary>
 ```sh
 cf push books-products -o amalgam8/a8-examples-bookinfo-productpage-sidecar:v1 --no-start
 cf set-env books-products A8_SERVICE "products:v1"
@@ -71,6 +73,7 @@ cf set-env books-products A8_REGISTRY_URL "http://books-registry.bosh-lite.com"
 cf set-env books-products A8_CONTROLLER_URL "http://books-controller.bosh-lite.com"
 cf start books-products
 ```
+</details>
 
 ## Deploy Book Details app
 
