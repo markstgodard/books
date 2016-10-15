@@ -1,15 +1,30 @@
-# About
-Books is a microservices-based application that shows how CF Container Networking
+# About 📖
+ Books is a polyglot microservices-based demo application that illustrates how to use [CF Container Networking](https://github.com/cloudfoundry-incubator/netman-release).
+
+ The [demo application](https://www.amalgam8.io/docs/demo/bookinfo/), [sidecar](https://www.amalgam8.io/docs/sidecar) and [control plane](https://www.amalgam8.io/docs/control-plane) are based on:
+- [Amalgam8](https://www.amalgam8.io/)
+  - a microservices fabric for Service Discovery, Routing
+
+The application is comprised of 4 microservices:
+- 
+![alt text](https://github.com/markstgodard/books/raw/master/app.png "demo app")
+
+For more information on Amalgam8, please see [www.amalgam8.io](https://www.amalgam8.io)
 
 # Prerequisites
 - [CF](https://github.com/cloudfoundry/cf-release) deployment
 - [Diego](https://github.com/cloudfoundry/diego-release) deployment
   - [Docker support](https://github.com/cloudfoundry/diego-design-notes/blob/master/docker-support.md) enabled
-  - Netman support enabled
-- cf cli
-  - netman cf cli plugin installed
+  - [Netman support](https://github.com/cloudfoundry-incubator/netman-release) enabled
+- [cf cli](http://docs.cloudfoundry.org/cf-cli)
+  - [netman network policy ](https://github.com/cloudfoundry-incubator/netman-release/releases) cf cli plugin installed
 
-# Steps
+# Configuration
+The scripts in this example use [cf.cfg](./cf.cfg) to configure CF domains, app names, etc.
+If you wish to use the scripts to deploy the demo apps, please change the values to match your target environment.
+The defaults assume [bosh-lite](https://github.com/cloudfoundry/bosh-lite) and that you already are targeting a org and space.
+
+# Deployment
 
 ## Deploy Amalgam8 Controller and Registry
 ```sh
