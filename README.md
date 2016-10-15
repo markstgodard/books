@@ -10,7 +10,7 @@
  - Reviews
  - Ratings
 
-[logo]: https://www.amalgam8.io/docs/figures/amalgam8-example-app-bookinfo.svg
+![alt_text](https://www.amalgam8.io/docs/figures/amalgam8-example-app-bookinfo.svg)
 
 ![alt text](https://github.com/markstgodard/books/raw/master/app.png "demo app")
 
