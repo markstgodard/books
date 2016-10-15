@@ -1,16 +1,18 @@
 # About 📖
- Books is a polyglot microservices-based demo application that illustrates how to use [CF Container Networking](https://github.com/cloudfoundry-incubator/netman-release).
+ Books is a polyglot microservices-based demo application that illustrates the use of [CF Container Networking](https://github.com/cloudfoundry-incubator/netman-release).
 
  The [demo application](https://www.amalgam8.io/docs/demo/bookinfo/), [sidecar](https://www.amalgam8.io/docs/sidecar) and Service Discovery / Routing [control plane](https://www.amalgam8.io/docs/control-plane) are based on [Amalgam8](https://www.amalgam8.io/).
 
  The application is comprised of 4 microservices: [Products](https://github.com/amalgam8/amalgam8/tree/master/examples/apps/bookinfo/productpage), [Details](https://github.com/amalgam8/amalgam8/tree/master/examples/apps/bookinfo/details), [Reviews](https://github.com/amalgam8/amalgam8/tree/master/examples/apps/bookinfo/reviews) and [Ratings](https://github.com/amalgam8/amalgam8/tree/master/examples/apps/bookinfo/ratings).
  - The products microservice talks to reviews and details
- - The reviews microservice talks to the ratings
+ - The reviews microservice talks to ratings
 
 This demo app will have a single external route for products page (i.e. [http://books-products.bosh-lite.com](http://books-products.bosh-lite.com/productpage?u=normal)). All other microservices (details, reviews and ratings) communication and policy enforcement will be on the internal [CF Container Network](https://github.com/cloudfoundry-incubator/netman-release).
+The CF apps in this demo are deployed as [Docker](https://docker.com) containers and leverage a [sidecar](https://www.amalgam8.io/docs/sidecar) inside the container that handles service discovery, health checks and routing requests to other microservices.
 
 ![alt_text](https://www.amalgam8.io/docs/figures/amalgam8-example-app-bookinfo.svg)
 
+Below is a visual of what parts of the product page are comprised of the various microservices.
 ![alt text](https://github.com/markstgodard/books/raw/master/app.png)
 
 For more information on Amalgam8, please see [www.amalgam8.io](https://www.amalgam8.io)
