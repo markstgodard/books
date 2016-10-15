@@ -104,7 +104,7 @@ You may either run this script:
 OR if you wish to deploy by hand
 ```sh
 cf push books-reviews -o amalgam8/a8-examples-bookinfo-reviews-sidecar:v3 --no-start --no-route -u none
-cf set-env books-reviews A8_SERVICE "reviews:v333"
+cf set-env books-reviews A8_SERVICE "reviews:v3"
 cf set-env books-reviews A8_ENDPOINT_PORT "9080"
 cf set-env books-reviews A8_ENDPOINT_TYPE "http"
 cf set-env books-reviews A8_PROXY "true"
