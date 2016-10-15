@@ -7,6 +7,8 @@
  - The products microservice talks to reviews and details
  - The reviews microservice talks to the ratings
 
+ This demo app will have a single external route for products page and all other microservices (details, reviews and ratings) will be internal and connectivity and policy will be on the internal [CF Container Network](https://github.com/cloudfoundry-incubator/netman-release).
+
 ![alt_text](https://www.amalgam8.io/docs/figures/amalgam8-example-app-bookinfo.svg)
 
 ![alt text](https://github.com/markstgodard/books/raw/master/app.png)
