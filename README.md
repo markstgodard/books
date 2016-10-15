@@ -2,9 +2,9 @@
 Books is a microservices-based application that shows how CF Container Networking
 
 # Prerequisites
-- CF deployment
-- Diego deployment
-  - Docker support enabled
+- [CF](https://github.com/cloudfoundry/cf-release) deployment
+- [Diego](https://github.com/cloudfoundry/diego-release) deployment
+  - [Docker support](https://github.com/cloudfoundry/diego-design-notes/blob/master/docker-support.md) enabled
   - Netman support enabled
 - cf cli
   - netman cf cli plugin installed
