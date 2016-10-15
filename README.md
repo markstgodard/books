@@ -1,4 +1,5 @@
-# About 📖
+# Books 📖
+## About
  Books is a polyglot microservices-based demo application that illustrates the use of [CF Container Networking](https://github.com/cloudfoundry-incubator/netman-release).
 
  The [demo application](https://www.amalgam8.io/docs/demo/bookinfo/), [sidecar](https://www.amalgam8.io/docs/sidecar) and Service Discovery / Routing [control plane](https://www.amalgam8.io/docs/control-plane) are based on [Amalgam8](https://www.amalgam8.io/).
@@ -20,7 +21,7 @@ Below is a visual of what parts of the product page are comprised of the various
 
 For more information on Amalgam8, please see [www.amalgam8.io](https://www.amalgam8.io)
 
-# Prerequisites
+## Prerequisites
 - [CF](https://github.com/cloudfoundry/cf-release) deployment
 - [Diego](https://github.com/cloudfoundry/diego-release) deployment
   - [Docker support](https://github.com/cloudfoundry/diego-design-notes/blob/master/docker-support.md) enabled
@@ -29,14 +30,14 @@ For more information on Amalgam8, please see [www.amalgam8.io](https://www.amalg
   - [netman network policy ](https://github.com/cloudfoundry-incubator/netman-release/releases) cf cli plugin installed
 - [jq](https://stedolan.github.io/jq/)
 
-# Configuration
+## Configuration
 The scripts in this example use [cf.cfg](./cf.cfg) to configure CF domains, app names, etc.
 If you wish to use the scripts to deploy the demo apps, please change the values to match your target environment.
 The defaults assume [bosh-lite](https://github.com/cloudfoundry/bosh-lite) and that you already are targeting a org and space.
 
-# Deployment
+## Deployment
 
-## Deploy Amalgam8 Controller and Registry
+### Deploy Amalgam8 Controller and Registry
 ```sh
 ./scripts/deploy-a8.sh
 ```
@@ -53,7 +54,7 @@ books-registry     started           1/1         256M     1G     books-registry.
 ```
 
 
-## Deploy Products app
+### Deploy Products app
 
 You may either run this script:
 ```sh
@@ -76,7 +77,7 @@ cf start books-products
 ```
 </details>
 
-## Deploy Book Details app
+### Deploy Book Details app
 
 You may either run this script:
 ```sh
@@ -104,7 +105,7 @@ cf access-allow books-products books-details --port 9080 --protocol tcp
 ```
 </details>
 
-## Deploy Book Reviews app
+### Deploy Book Reviews app
 
 You may either run this script:
 ```sh
@@ -132,7 +133,7 @@ cf access-allow books-products books-reviews --port 9080 --protocol tcp
 ```
 </details>
 
-## Deploy Book Ratings app
+### Deploy Book Ratings app
 
 You may either run this script:
 ```sh
@@ -160,7 +161,7 @@ cf access-allow books-reviews books-ratings --port 9080 --protocol tcp
 ```
 </details>
 
-## Check Apps
+### Check Apps
 After deploying you should see the controller, registry and products apps with routes. The reviews, details and ratings apps will not have external routes.
 ```sh
 $ cf apps
@@ -176,7 +177,7 @@ books-registry     started           1/1         256M     1G     books-registry.
 books-products     started           1/1         256M     1G     books-products.bosh-lite.com
 ```
 
-## Check Network Policy
+### Check Network Policy
 The above scripts/commands will create the appropriate network policy to ensure that only appropriate apps can talk to each other.
 ```sh
 $ cf access-list
@@ -189,7 +190,7 @@ books-products  books-reviews   tcp             9080
 books-reviews   books-ratings   tcp             9080
 ```
 
-## Check Service Registry
+### Check Service Registry
 At this point we have our apps deployed and we should be able to see them registered in the service registry. The IP address and ports that the applications registered are the internal CF Container Networking overlay addresses.
 
 ```sh
@@ -261,10 +262,10 @@ curl -s books-registry.bosh-lite.com/api/v1/instances | jq .
 ```
 </details>
 
-# Try it
+## Try it
 Go to products page, for example: [http://books-products.bosh-lite.com](http://books-products.bosh-lite.com/productpage?u=normal)
 
-# Now what?
+## Now what?
 For more information on CF Container Networking:
 - [CF Container Networking release](https://gitcom.com/cloudfoundry-incubator/netman-release)
 - Chat with us at the `#container-networking` channel on [CloudFoundry Slack](http://slack.cloudfoundry.org/)
