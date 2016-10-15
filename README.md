@@ -179,7 +179,8 @@ At this point we have our apps deployed and we should be able to see them regist
 ```sh
 curl -s books-registry.bosh-lite.com/api/v1/instances | jq .
 ```
-
+<details>
+ <summary>service registry response</summary>
 ```json
 {
   "instances": [
@@ -241,6 +242,7 @@ curl -s books-registry.bosh-lite.com/api/v1/instances | jq .
     }
   ]
 }
+</details>
 ```
 
 ## Try it
