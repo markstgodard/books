@@ -142,7 +142,7 @@ You may either run this script:
 <details>
  <summary>if you want to deploy by hand</summary>
 ```sh
-cf push books-ratings-o amalgam8/a8-examples-bookinfo-ratings-sidecar:v1 --no-start --no-route
+cf push books-ratings -o amalgam8/a8-examples-bookinfo-ratings-sidecar:v1 --no-start --no-route
 cf set-env books-ratings A8_SERVICE "ratings:v1"
 cf set-env books-ratings A8_ENDPOINT_PORT "9080"
 cf set-env books-ratings A8_ENDPOINT_TYPE "http"
