@@ -4,9 +4,14 @@
  The [demo application](https://www.amalgam8.io/docs/demo/bookinfo/), [sidecar](https://www.amalgam8.io/docs/sidecar) and [control plane](https://www.amalgam8.io/docs/control-plane) are based on:
 - [Amalgam8](https://www.amalgam8.io/)
   - a microservices fabric for Service Discovery, Routing
+ The application is comprised of 4 microservices:
+ - Products
+ - Details
+ - Reviews
+ - Ratings
 
-The application is comprised of 4 microservices:
-- 
+[logo]: https://www.amalgam8.io/docs/figures/amalgam8-example-app-bookinfo.svg
+
 ![alt text](https://github.com/markstgodard/books/raw/master/app.png "demo app")
 
 For more information on Amalgam8, please see [www.amalgam8.io](https://www.amalgam8.io)
