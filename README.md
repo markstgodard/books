@@ -23,8 +23,8 @@ Getting apps in org demo / space demo as admin...
 OK
 
 name               requested state   instances   memory   disk   urls
-controller   started           1/1         256M     1G     controller.bosh-lite.com
-registry     started           1/1         256M     1G     registry.bosh-lite.com
+books-controller   started           1/1         256M     1G     books-controller.bosh-lite.com
+books-registry     started           1/1         256M     1G     books-registry.bosh-lite.com
 ```
 
 
@@ -123,27 +123,85 @@ Allow the Products app the ability to talk to the Reviews app:
 cf access-allow books-reviews books-ratings --port 9080 --protocol tcp
 ```
 
+## Check Apps
+
+```sh
+$ cf apps
+Getting apps in org demo / space demo as admin...
+OK
+
+name               requested state   instances   memory   disk   urls
+books-controller   started           1/1         256M     1G     books-controller.bosh-lite.com
+books-details      started           1/1         256M     1G
+books-ratings      started           1/1         256M     1G
+books-reviews      started           1/1         256M     1G
+books-registry     started           1/1         256M     1G     books-registry.bosh-lite.com
+books-products     started           1/1         256M     1G     books-products.bosh-lite.com
+```
+
 ## Check Service Registry
 
 At this point we have our apps deployed and we should be able to see them registered in the A8 service registry. The IP address and port that the applications register themselves under is it's CF Container Networking overlay address.
 
 ```sh
-curl -s registry.bosh-lite.com/api/v1/instances | jq .
+curl -s books-registry.bosh-lite.com/api/v1/instances | jq .
 ```
 
 ```json
 {
   "instances": [
     {
-      "id": "ac7a4af02d8a1ba3",
-      "service_name": "products",
+      "id": "cb629d65dfc6f1e0",
+      "service_name": "reviews",
       "endpoint": {
         "type": "http",
-        "value": "10.255.12.10:9080"
+        "value": "10.255.96.22:9080"
       },
       "ttl": 60,
       "status": "UP",
-      "last_heartbeat": "2016-10-15T14:59:43.0142594Z",
+      "last_heartbeat": "2016-10-15T16:03:39.428654742Z",
+      "tags": [
+        "v3"
+      ]
+    },
+    {
+      "id": "7306c32374223fc4",
+      "service_name": "ratings",
+      "endpoint": {
+        "type": "http",
+        "value": "10.255.12.33:9080"
+      },
+      "ttl": 60,
+      "status": "UP",
+      "last_heartbeat": "2016-10-15T16:03:41.600206818Z",
+      "tags": [
+        "v1"
+      ]
+    },
+    {
+      "id": "a3434e01df042473",
+      "service_name": "products",
+      "endpoint": {
+        "type": "http",
+        "value": "10.255.12.18:9080"
+      },
+      "ttl": 60,
+      "status": "UP",
+      "last_heartbeat": "2016-10-15T16:03:37.301438833Z",
+      "tags": [
+        "v1"
+      ]
+    },
+    {
+      "id": "8248bf8cd5d514fe",
+      "service_name": "details",
+      "endpoint": {
+        "type": "http",
+        "value": "10.255.96.16:9080"
+      },
+      "ttl": 60,
+      "status": "UP",
+      "last_heartbeat": "2016-10-15T16:03:40.571665858Z",
       "tags": [
         "v1"
       ]
