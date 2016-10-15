@@ -67,8 +67,8 @@ cf set-env books-products A8_ENDPOINT_PORT "9080"
 cf set-env books-products A8_ENDPOINT_TYPE "http"
 cf set-env books-products A8_PROXY "true"
 cf set-env books-products A8_REGISTER "true"
-cf set-env books-products A8_REGISTRY_URL "http://registry.bosh-lite.com"
-cf set-env books-products A8_CONTROLLER_URL "http://controller.bosh-lite.com"
+cf set-env books-products A8_REGISTRY_URL "http://books-registry.bosh-lite.com"
+cf set-env books-products A8_CONTROLLER_URL "http://books-controller.bosh-lite.com"
 cf start books-products
 ```
 
@@ -87,8 +87,8 @@ cf set-env books-details A8_ENDPOINT_PORT "9080"
 cf set-env books-details A8_ENDPOINT_TYPE "http"
 cf set-env books-details A8_PROXY "true"
 cf set-env books-details A8_REGISTER "true"
-cf set-env books-details A8_REGISTRY_URL "http://registry.bosh-lite.com"
-cf set-env books-details A8_CONTROLLER_URL "http://controller.bosh-lite.com"
+cf set-env books-details A8_REGISTRY_URL "http://books-registry.bosh-lite.com"
+cf set-env books-details A8_CONTROLLER_URL "http://books-controller.bosh-lite.com"
 cf start books-details
 ```
 
@@ -112,8 +112,8 @@ cf set-env books-reviews A8_ENDPOINT_PORT "9080"
 cf set-env books-reviews A8_ENDPOINT_TYPE "http"
 cf set-env books-reviews A8_PROXY "true"
 cf set-env books-reviews A8_REGISTER "true"
-cf set-env books-reviews A8_REGISTRY_URL "http://registry.bosh-lite.com"
-cf set-env books-reviews A8_CONTROLLER_URL "http://controller.bosh-lite.com"
+cf set-env books-reviews A8_REGISTRY_URL "http://books-registry.bosh-lite.com"
+cf set-env books-reviews A8_CONTROLLER_URL "http://books-controller.bosh-lite.com"
 cf start books-reviews
 ```
 
@@ -137,8 +137,8 @@ cf set-env books-ratings A8_ENDPOINT_PORT "9080"
 cf set-env books-ratings A8_ENDPOINT_TYPE "http"
 cf set-env books-ratings A8_PROXY "true"
 cf set-env books-ratings A8_REGISTER "true"
-cf set-env books-ratings A8_REGISTRY_URL "http://registry.bosh-lite.com"
-cf set-env books-ratings A8_CONTROLLER_URL "http://controller.bosh-lite.com"
+cf set-env books-ratings A8_REGISTRY_URL "http://books-registry.bosh-lite.com"
+cf set-env books-ratings A8_CONTROLLER_URL "http://books-controller.bosh-lite.com"
 cf start books-ratings
 ```
 
