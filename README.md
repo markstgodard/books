@@ -242,8 +242,8 @@ curl -s books-registry.bosh-lite.com/api/v1/instances | jq .
     }
   ]
 }
-</details>
 ```
+</details>
 
 ## Try it
-Go to products page [http://books-products.bosh-lite.com](http://books-products.bosh-lite.com/productpage?u=normal)
+Go to products page [http://books-products.bosh-lite.com](http://books-products.bosh-lite.com/productpage?u=normal)!
