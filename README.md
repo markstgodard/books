@@ -27,6 +27,7 @@ For more information on Amalgam8, please see [www.amalgam8.io](https://www.amalg
   - [Netman support](https://github.com/cloudfoundry-incubator/netman-release) enabled
 - [cf cli](http://docs.cloudfoundry.org/cf-cli)
   - [netman network policy ](https://github.com/cloudfoundry-incubator/netman-release/releases) cf cli plugin installed
+- [jq](https://stedolan.github.io/jq/)
 
 # Configuration
 The scripts in this example use [cf.cfg](./cf.cfg) to configure CF domains, app names, etc.
