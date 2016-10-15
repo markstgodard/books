@@ -59,7 +59,7 @@ You may either run this script:
 ./scripts/deploy-products.sh
 ```
 
-OR
+**OR**
 <details>
  <summary>if you want to deploy by hand</summary>
 ```sh
@@ -82,7 +82,9 @@ You may either run this script:
 ./scripts/deploy-details.sh
 ```
 
-OR if you wish to deploy by hand
+**OR**
+<details>
+ <summary>if you want to deploy by hand</summary>
 ```sh
 cf push books-details -o amalgam8/a8-examples-bookinfo-details-sidecar:v1 --no-start --no-route
 cf set-env books-details A8_SERVICE "details:v1"
@@ -99,6 +101,7 @@ Allow the Products app the ability to talk to the Details app:
 ```sh
 cf access-allow books-products books-details --port 9080 --protocol tcp
 ```
+</details>
 
 ## Deploy Book Reviews app
 
