@@ -20,8 +20,8 @@ Getting apps in org demo / space demo as admin...
 OK
 
 name               requested state   instances   memory   disk   urls
-books-controller   started           1/1         256M     1G     books-controller.bosh-lite.com
-books-registry     started           1/1         256M     1G     books-registry.bosh-lite.com
+controller   started           1/1         256M     1G     controller.bosh-lite.com
+registry     started           1/1         256M     1G     registry.bosh-lite.com
 ```
 
 
@@ -34,7 +34,7 @@ You may either run this script:
 
 OR if you wish to deploy by hand
 ```
-cf push products -o amalgam8/a8-examples-bookinfo-productpage-sidecar --no-start
+cf push products -o amalgam8/a8-examples-bookinfo-productpage-sidecar:v1 --no-start
 cf set-env products A8_SERVICE "products:v1"
 cf set-env products A8_ENDPOINT_PORT "9080"
 cf set-env products A8_ENDPOINT_TYPE "http"

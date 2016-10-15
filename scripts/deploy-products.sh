@@ -1,15 +1,15 @@
 #!/bin/bash
 
-source $SCRIPTDIR/cf.cfg
+source $(pwd)/cf.cfg
 
-cf push products -o amalgam8/a8-examples-bookinfo-productpage-sidecar --no-start
+cf push ${PRODUCTS_NAME} -o amalgam8/a8-examples-bookinfo-productpage-sidecar:v1 --no-start
 
-cf set-env products A8_SERVICE "products:v1"
-cf set-env products A8_ENDPOINT_PORT "8080"
-cf set-env products A8_ENDPOINT_TYPE "http"
-cf set-env products A8_PROXY "true"
-cf set-env products A8_REGISTER "true"
-cf set-env products A8_REGISTRY_URL "http://registry.bosh-lite.com"
-cf set-env products A8_CONTROLLER_URL "http://controller.bosh-lite.com"
+cf set-env ${PRODUCTS_NAME} A8_SERVICE "products:v1"
+cf set-env ${PRODUCTS_NAME} A8_ENDPOINT_PORT "9080"
+cf set-env ${PRODUCTS_NAME} A8_ENDPOINT_TYPE "http"
+cf set-env ${PRODUCTS_NAME} A8_PROXY "true"
+cf set-env ${PRODUCTS_NAME} A8_REGISTER "true"
+cf set-env ${PRODUCTS_NAME} A8_REGISTRY_URL "http://${REGISTRY_NAME}.bosh-lite.com"
+cf set-env ${PRODUCTS_NAME} A8_CONTROLLER_URL "http://${CONTROLLER_NAME}.bosh-lite.com"
 
-
+cf start ${PRODUCTS_NAME}
