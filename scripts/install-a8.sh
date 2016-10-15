@@ -1,7 +1,9 @@
 #!/bin/bash
-source $(pwd)/cf.cfg
-
 A8_DIR=vendor/github.com/amalgam8/amalgam8
+
+CONTROLLER_NAME=books-controller
+REGISTRY_NAME=books-registry
+
 
 mkdir -p bin/controller
 mkdir -p bin/registry

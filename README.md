@@ -8,7 +8,7 @@ Books is a micro-services application that uses CF Container Networking
 
 # Steps
 
-## Install Amalgam8 Controller and Registry
+## Deploy Amalgam8 Controller and Registry
 ```
 ./scripts/deploy-a8.sh
 ```
@@ -22,4 +22,25 @@ OK
 name               requested state   instances   memory   disk   urls
 books-controller   started           1/1         256M     1G     books-controller.bosh-lite.com
 books-registry     started           1/1         256M     1G     books-registry.bosh-lite.com
+```
+
+
+## Deploy Products app
+
+You may either run this script:
+```
+./scripts/deploy-products.sh
+```
+
+OR if you wish to deploy by hand
+```
+cf push products -o amalgam8/a8-examples-bookinfo-productpage-sidecar --no-start
+cf set-env products A8_SERVICE "products:v1"
+cf set-env products A8_ENDPOINT_PORT "9080"
+cf set-env products A8_ENDPOINT_TYPE "http"
+cf set-env products A8_PROXY "true"
+cf set-env products A8_REGISTER "true"
+cf set-env products A8_REGISTRY_URL "http://registry.bosh-lite.com"
+cf set-env products A8_CONTROLLER_URL "http://controller.bosh-lite.com"
+cf start products
 ```
