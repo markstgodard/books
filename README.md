@@ -161,7 +161,7 @@ books-products     started           1/1         256M     1G     books-products.
 ```
 
 ## Check Network Policy
-The above scripts/commands will create the appropriate network policy to ensure that only products can talk to details and reviews, and reviews can talk to ratings.
+The above scripts/commands will create the appropriate network policy to ensure that only appropriate apps can talk to each other.
 ```sh
 $ cf access-list
 Listing policies as admin...
@@ -174,7 +174,6 @@ books-reviews   books-ratings   tcp             9080
 ```
 
 ## Check Service Registry
-
 At this point we have our apps deployed and we should be able to see them registered in the service registry. The IP address and ports that the applications registered are the internal CF Container Networking overlay addresses.
 
 ```sh
@@ -243,3 +242,6 @@ curl -s books-registry.bosh-lite.com/api/v1/instances | jq .
   ]
 }
 ```
+
+## Try it
+Go to products page [http://books-products.bosh-lite.com](http://books-products.bosh-lite.com/productpage?u=normal)
