@@ -12,7 +12,7 @@ About this demo app:
 - has a single external route for products page (i.e. [http://books-products.bosh-lite.com](http://books-products.bosh-lite.com/productpage?u=normal))
 - all other microservices (details, reviews and ratings) communication and policy enforcement will be on the internal overlay [CF Container Network](https://github.com/cloudfoundry-incubator/netman-release)
 - CF apps are deployed as [Docker](https://docker.com) containers and leverage a [sidecar](https://www.amalgam8.io/docs/sidecar) inside the container that handles service discovery, health checks and routing requests to other microservices
-- amalgam8 control plane (service registry / controller) are not deployed with auth enabled, please see [a8 docs](https://www.amalgam8.io/docs/sidecar/sidecar-configuration-options) for more info.
+- amalgam8 control plane (service registry / controller) is not deployed with auth enabled, please see [a8 docs](https://www.amalgam8.io/docs/sidecar/sidecar-configuration-options) for more info.
 
 ![alt_text](https://www.amalgam8.io/docs/figures/amalgam8-example-app-bookinfo.svg)
 
