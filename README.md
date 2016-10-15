@@ -3,9 +3,12 @@
 
  The [demo application](https://www.amalgam8.io/docs/demo/bookinfo/), [sidecar](https://www.amalgam8.io/docs/sidecar) and Service Discovery / Routing [control plane](https://www.amalgam8.io/docs/control-plane) are based on [Amalgam8](https://www.amalgam8.io/).
 
- The application is comprised of 4 microservices: [Products](https://github.com/amalgam8/amalgam8/tree/master/examples/apps/bookinfo/productpage), [Details](https://github.com/amalgam8/amalgam8/tree/master/examples/apps/bookinfo/details), [Reviews](https://github.com/amalgam8/amalgam8/tree/master/examples/apps/bookinfo/reviews) and [Ratings](https://github.com/amalgam8/amalgam8/tree/master/examples/apps/bookinfo/ratings)
+ The application is comprised of 4 microservices: [Products](https://github.com/amalgam8/amalgam8/tree/master/examples/apps/bookinfo/productpage), [Details](https://github.com/amalgam8/amalgam8/tree/master/examples/apps/bookinfo/details), [Reviews](https://github.com/amalgam8/amalgam8/tree/master/examples/apps/bookinfo/reviews) and [Ratings](https://github.com/amalgam8/amalgam8/tree/master/examples/apps/bookinfo/ratings).
+ The products microservice talks to reviews and details, while the reviews microservice talks to the ratings service.
+
 ![alt_text](https://www.amalgam8.io/docs/figures/amalgam8-example-app-bookinfo.svg)
-![alt text](https://github.com/markstgodard/books/raw/master/app.png "demo app")
+
+![alt text](https://github.com/markstgodard/books/raw/master/app.png)
 
 For more information on Amalgam8, please see [www.amalgam8.io](https://www.amalgam8.io)
 
