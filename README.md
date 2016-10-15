@@ -110,7 +110,9 @@ You may either run this script:
 ./scripts/deploy-reviews.sh
 ```
 
-OR if you wish to deploy by hand
+**OR**
+<details>
+ <summary>if you want to deploy by hand</summary>
 ```sh
 cf push books-reviews -o amalgam8/a8-examples-bookinfo-reviews-sidecar:v3 --no-start --no-route -u none
 cf set-env books-reviews A8_SERVICE "reviews:v3"
@@ -127,6 +129,7 @@ Allow the Products app the ability to talk to the Reviews app:
 ```sh
 cf access-allow books-products books-reviews --port 9080 --protocol tcp
 ```
+</details>
 
 ## Deploy Book Ratings app
 
@@ -135,7 +138,9 @@ You may either run this script:
 ./scripts/deploy-ratings.sh
 ```
 
-OR if you wish to deploy by hand
+**OR**
+<details>
+ <summary>if you want to deploy by hand</summary>
 ```sh
 cf push books-ratings-o amalgam8/a8-examples-bookinfo-ratings-sidecar:v1 --no-start --no-route
 cf set-env books-ratings A8_SERVICE "ratings:v1"
@@ -152,6 +157,7 @@ Allow the Reviews app the ability to talk to the Ratings app:
 ```sh
 cf access-allow books-reviews books-ratings --port 9080 --protocol tcp
 ```
+</details>
 
 ## Check Apps
 After deploying you should see the controller, registry and products apps with routes. The reviews, details and ratings apps will not have external routes.
