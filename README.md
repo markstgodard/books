@@ -31,7 +31,7 @@ For more information on Amalgam8, please see [www.amalgam8.io](https://www.amalg
 - [jq](https://stedolan.github.io/jq/)
 
 ## Configuration
-The scripts in this example use [cf.cfg](./cf.cfg) to configure CF domains, app names, etc.
+The scripts in this example uses this [config file](./cf.cfg) to configure CF domains, app names, etc.
 If you wish to use the scripts to deploy the demo apps, please change the values to match your target environment.
 The defaults assume [bosh-lite](https://github.com/cloudfoundry/bosh-lite) and that you already are targeting a org and space.
 
