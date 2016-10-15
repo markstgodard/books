@@ -246,4 +246,9 @@ curl -s books-registry.bosh-lite.com/api/v1/instances | jq .
 </details>
 
 ## Try it
-Go to products page [http://books-products.bosh-lite.com](http://books-products.bosh-lite.com/productpage?u=normal)!
+Go to products page, for example: [http://books-products.bosh-lite.com](http://books-products.bosh-lite.com/productpage?u=normal)
+
+## Now what?
+For more information on CF Container Networking:
+- [CF Container Networking release](https://gitcom.com/cloudfoundry-incubator/netman-release)
+- Chat with us at the `#container-networking` channel on [CloudFoundry Slack](http://slack.cloudfoundry.org/)
