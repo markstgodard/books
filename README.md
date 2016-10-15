@@ -139,13 +139,13 @@ cf set-env books-ratings A8_CONTROLLER_URL "http://controller.bosh-lite.com"
 cf start books-ratings
 ```
 
-Allow the Products app the ability to talk to the Reviews app:
+Allow the Reviews app the ability to talk to the Ratings app:
 ```sh
 cf access-allow books-reviews books-ratings --port 9080 --protocol tcp
 ```
 
 ## Check Apps
-
+After deploying you should see the controller, registry and products apps with routes. The reviews, details and ratings apps will not have external routes.
 ```sh
 $ cf apps
 Getting apps in org demo / space demo as admin...
@@ -160,9 +160,22 @@ books-registry     started           1/1         256M     1G     books-registry.
 books-products     started           1/1         256M     1G     books-products.bosh-lite.com
 ```
 
+## Check Network Policy
+The above scripts/commands will create the appropriate network policy to ensure that only products can talk to details and reviews, and reviews can talk to ratings.
+```sh
+$ cf access-list
+Listing policies as admin...
+OK
+
+Source          Destination     Protocol        Port
+books-products  books-details   tcp             9080
+books-products  books-reviews   tcp             9080
+books-reviews   books-ratings   tcp             9080
+```
+
 ## Check Service Registry
 
-At this point we have our apps deployed and we should be able to see them registered in the A8 service registry. The IP address and port that the applications register themselves under is it's CF Container Networking overlay address.
+At this point we have our apps deployed and we should be able to see them registered in the service registry. The IP address and ports that the applications registered are the internal CF Container Networking overlay addresses.
 
 ```sh
 curl -s books-registry.bosh-lite.com/api/v1/instances | jq .
